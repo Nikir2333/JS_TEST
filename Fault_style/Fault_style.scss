@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding:0;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  .text{
+    width: 750px;
+    color: #fff;
+    font-family: sans-serif;
+    font-size:100px;
+    position: relative;
+    margin: 0 auto;
+  }
+  .text::before{
+    content: attr(data-text);
+    background-color: #000;
+    position: absolute;
+    left: 3px;
+    text-shadow: 3px 0 red;
+    animation: animate2 2s infinite alternate-reverse;
+  }
+  .text::after{
+    content: attr(data-text);
+    background-color: #000;
+    position: absolute;
+    left: -3px;
+    text-shadow: -3px 0 blue;
+    animation: animate1 2s infinite alternate-reverse;
+
+  }
+  @keyframes animate1{
+    $steps:25;
+    @for $i from 0 through $steps{
+        #{percentage($i*(1/$steps))}{
+            clip-path:inset(random(100)+px 0 random(100)+px 0);
+        }
+    }
+  }
+  @keyframes animate2{
+    $steps:25;
+    @for $i from 0 through $steps{
+        #{percentage($i*(1/$steps))}{
+            clip-path:inset(0 random(100)+px 0 random(100)+px);
+        }
+    }
+  }
+  // scss文件安装插件 live server sass后点击下方watch然后刷新就能编译为css文件

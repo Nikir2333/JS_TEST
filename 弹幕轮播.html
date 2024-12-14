@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width-device-width,initial-scale=1.0"> 
+    <title>HTML Style Example</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #111;
+        }
+        .container {
+            position: relative;
+            display: flex;
+            width: 700px;
+            overflow: hidden;
+            /* background-color: red; */
+            mask-image: linear-gradient(90deg,transparent,rgba(0,0,0,1) 20%,rgba(0,0,0,1) 80%,transparent);
+        }
+        .container div{
+            white-space: nowrap;
+            animation: animate var(--t) linear infinite;
+        }
+        .container div:nth-child(2){
+            animation: animate2 var(--t) linear infinite;
+            animation-delay: calc(var(--t)/-2);
+        }
+        .container div span{
+            display: inline-flex;
+            margin: 10px;
+            letter-spacing: #333;
+            color: #fff;
+            padding:5px 10px;
+            border-radius: 5px;
+        }
+        @keyframes animate{
+            from{
+                transform: translate(100%);
+            }
+            to{
+                transform: translate(-100%);
+            }
+        }
+        @keyframes animate2{
+            from{
+                transform: translate(0%);
+            }
+            to{
+                transform: translate(-200%);
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div class='container' style="--t:20s">
+        <div>
+            <span>Lorem, ipsum.</span>
+            <span>Facere, ea!</span>
+            <span>Ut, quam?</span>
+            <span>Nobis, exercitationem?</span>
+            <span>Molestiae, velit.</span>
+        </div>
+        <div>
+            <span>Facere, ea!</span>
+            <span>Facere, ea!</span>
+            <span>Facere, ea!</span>
+            <span>Facere, ea!</span>
+            <span>Nobis, exercitationem?</span>
+        </div>
+    </div>
+    <div class='container' style="--t:50s">
+        <div>
+            <span>Lorem, ipsum.</span>
+            <span>Facere, ea!</span>
+            <span>Ut, quam?</span>
+            <span>Nobis, exercitationem?</span>
+            <span>Molestiae, velit.</span>
+        </div>
+        <div>
+            <span>Facere, ea!</span>
+            <span>Facere, ea!</span>
+            <span>Facere, ea!</span>
+            <span>Facere, ea!</span>
+            <span>Nobis, exercitationem?</span>
+        </div>
+    </div>
+    <div class='container' style="--t:80s">
+        <div>
+            <span>Lorem, ipsum.</span>
+            <span>Facere, ea!</span>
+            <span>Ut, quam?</span>
+            <span>Nobis, exercitationem?</span>
+            <span>Molestiae, velit.</span>
+        </div>
+        <div>
+            <span>Facere, ea!</span>
+            <span>Facere, ea!</span>
+            <span>Facere, ea!</span>
+            <span>Facere, ea!</span>
+            <span>Nobis, exercitationem?</span>
+        </div>
+    </div>
+  </body>
+</html>

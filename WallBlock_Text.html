@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width-device-width,initial-scale=1.0"> 
+    <title>HTML Style Example</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            background-color: #111;
+        }
+        .container {
+            position:absolute;
+            left: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        h2 {
+            color: #fff;
+            font-size: 12em;
+        }
+        .container .box{
+            width: 50px;
+            height: 50px;
+            background-color: #222;
+            border: 1px solid #000;
+        }
+        .container .box.active{
+            background-color: #0f0;
+            box-shadow: 0 0 10px #0f05
+                        0 0 30px #0f05 
+                        0 0 80px #0f05;
+            animation: animate 2s linear forwards;
+        }
+        @keyframes animate{
+            from{
+                transform: translateY(0) rotate(0deg);
+            }
+            to{
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <h2>Hello World</h2>
+    <div class='container'></div>
+
+    <script>
+        let container = document.querySelector('.container');
+        for (let i = 0; i < 3000; i++) {
+            let box = document.createElement('div');
+            box.className='box';
+            container.appendChild(box);
+        }
+        let boxMove = document.querySelectorAll('.box');
+        for(let i =0;i<boxMove.length;i++){
+            // 方块掉落时间随机
+            let duration = Math.random()*5;
+            boxMove[i].addEventListener('mouseover',()=>{
+                boxMove[i].classList.add('active');
+                boxMove[i].style.animationDuration = 1+ duration +'s';
+            })
+        }
+    </script>
+  </body>
+</html>

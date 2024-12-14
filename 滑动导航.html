@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width-device-width,initial-scale=1.0"> 
+    <title>HTML Style Example</title>
+    <style>
+       :root{
+            --w:60vw;
+            --div_w:calc(var(--w)/5);
+            --h:80px;  
+            --r:15px;     
+       }
+       nav{
+        width: var(--w);
+        height: var(--h);
+        border-radius: var(--r);
+        background: rgba(255,255,255,.5);
+        box-shadow: 16px 16px 32px #9f9f9f,
+                    -16px -16px 32px #ffffff;
+        display: flex;
+        margin: 100px auto;
+        position: relative;
+        & .item{
+            width: var(--div_w);
+            height: var(--h);
+            font-size: 30px;
+            text-align: center;
+            line-height: var(--h);
+        }
+        & .item:nth-child(2):hover~#block{
+            left: var(--div_w);
+        }
+        & .item:nth-child(3):hover~#block{
+            left: calc(var(--div_w)*2);
+        }
+        & .item:nth-child(4):hover~#block{
+            left: calc(var(--div_w)*3);
+        }
+        & .item:nth-child(5):hover~#block{
+            left: calc(var(--div_w)*4);
+        }
+        & .item:hover{
+            cursor: pointer;
+        }
+        & #block{
+            position: absolute;
+            width: var(--div_w);
+            height: var(--h);
+            background-color: rgba(100,100,130,.8);
+            border-radius: var(--r);
+            transition: 0.5s;
+            left:0;
+            z-index: -1;
+        }
+       }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <div class="item">HTML5</div>
+        <div class="item">CSS3</div>
+        <div class="item">VUE</div>
+        <div class="item">REACT</div>
+        <div class="item">JS</div>
+        <div id="block"></div>
+    </nav>
+  </body>
+</html>

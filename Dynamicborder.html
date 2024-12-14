@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width-device-width,initial-scale=1.0"> 
+    <title>HTML Style Example</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            min-height: 100vh;
+            background-color: #000;
+        }
+        .box {
+            padding: 15vmin 10vmin;
+            background-color: #fff;
+            color: aqua;
+            border-radius: 5vmin;
+            font-size:8vmin;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .box::before {
+            content: '';
+            width: 200%;
+            height: 200%;
+            background-color: #22292f;
+            position: absolute;
+            left:-50%;
+            top:-50%;
+            background-image: conic-gradient(
+                transparent,#66ddf7,transparent 30%
+            );
+            z-index: -2;
+            animation: rotate 5s linear infinite;
+        }
+        @keyframes rotate {
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        .box::after{
+            content: '';
+            position: absolute;
+            inset: 1vmin;
+            background-color: #000;
+            border-radius: 4vmin;
+            z-index: -1;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class='box'>
+        流水灯边框
+    </div>
+  </body>
+</html>

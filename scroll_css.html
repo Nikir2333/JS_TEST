@@ -1,0 +1,88 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星空</title>
+    <style>
+        html,body{
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            transition: var(--scroll-position-delayed) 0.15s linear;
+            --scroll-timestep:calc(var(var(--scroll-position))-var(var(--scroll-position-delayed)));
+            --scroll-dynamic:calc(var(--scroll-timestep)/var(--scroll-timestep));
+        }
+        .debug{
+            position: fixed;
+            padding: 15px;
+            width: 300px;
+            background: #fff;
+            border: 1px solid royalblue;
+            font-size: 16px;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            counter-reset: 
+                scroll-position calc(var(--scroll-position)*1)
+                scroll-position-delayed calc(var(--scroll-position-delayed)*1);
+        }
+        [data-id="--scroll-position"]::after{
+            content: "--scroll-position:" counter(scroll-position);
+        }
+        [data-id="--scroll-position-delayed"]::after{
+            content: "--scroll-position-delayed:" counter(scroll-position-delayed);
+        }
+        [data-id="--scroll-timestep"]::after{
+            content: "--scroll-timestep:" counter(scroll-timestep);
+        }
+        @property --scroll-position{
+            syntax: "<number>";
+            inherits: true;
+            initial-value: 0;
+        }
+        @property --scroll-position-delayed{
+            syntax: "<number>";
+            inherits: true;
+            initial-value: 0;
+        }
+        @property --scroll-position-timestep{
+            syntax: "<number>";
+            inherits: true;
+            initial-value: 0;
+        }
+        @keyframes adjust-p{
+            to{
+                --scroll-position:100;
+                --scroll-position-delayed:100
+            }
+        }
+        :root{
+            animation: adjust-p 3s linear;
+            animation-timeline: scroll();
+        }
+        .back {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            background-color: royalblue;
+            border-radius: 8px;
+            width: 60px;
+            height: 60px;
+            transform: translateX(clac(var(--scroll-dynamic)*100%));
+            transition: 0.2s;
+        }
+    </style>
+</head>   
+<body>
+    <img src="starry_sky.jpg" alt="">
+    <!-- 一般这部分是广告链接或顶部回弹功能 -->
+    <a class="back" href="#"></a>
+    <div class="debug">
+        <div data-id="--scroll-position"></div>
+        <div data-id="--scroll-position-delayed"></div>
+        <div data-id="--scroll-timestep"></div>
+    </div>
+</body>    
+</html>

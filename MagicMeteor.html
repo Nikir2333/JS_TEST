@@ -1,0 +1,71 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星空</title>
+    <style>
+        body{
+            padding:0;
+            margin: 0;
+            overflow: scroll;
+            scroll-behavior: smooth;
+        }
+        #g-container{
+            text-align: center;
+            width: 100vw;
+            font-size:20px;
+        }
+        #g-container::before{
+            content: "";
+            position: fixed;
+            height: 7px;
+            left:0;
+            top:0;
+            right: 0;
+            background: #ffc107;
+            animation: scale 3s linear;
+            animation-timeline: scroll(root);
+            transform-origin: 0 50%;
+        }
+        @keyframes scale{
+            0%{
+                transform: scaleX(0);
+            }
+            100%{
+                transform: scaleX(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="g-container">
+        <h1>CSS滚动驱动效果</h1>
+        <!-- lorem乱数假文模拟排版 lorem200 即生成200个假文填充 -->
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis iure, minima deleniti temporibus reprehenderit assumenda itaque quae voluptates deserunt in, culpa excepturi, commodi cupiditate asperiores saepe a nesciunt nostrum cum.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque exercitationem nam eos? Architecto vitae consequuntur libero illo non, labore suscipit veritatis modi mollitia placeat quisquam dolores iste. Esse, fuga voluptate.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque molestias alias laboriosam aliquam ab. Quaerat iusto beatae eligendi quo ea odit maxime ipsam quibusdam dolore maiores repudiandae, omnis est ducimus?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, accusantium quos! Optio modi asperiores eligendi fuga rerum? Minima totam minus blanditiis! Sunt deleniti quisquam vitae. Ab qui doloremque architecto ullam?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae totam eaque, explicabo itaque vitae, architecto quia quaerat vel quasi eum modi rem aspernatur. Consectetur minima blanditiis reprehenderit sit esse enim!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit voluptatum ipsum expedita voluptas iure nihil repudiandae, natus voluptatibus possimus consectetur, cum accusantium ratione pariatur laudantium consequuntur 
+            ad eaque, perferendis quas nisi eligendi odit. Voluptas, pariatur facere? Quidem repudiandae fugit, natus voluptatem ad veritatis rem. Ab voluptatibus quibusdam illum ducimus perspiciatis laborum laudantium. Alias dolores obcaecati quisquam reiciendis nemo. Blanditiis, consequuntur!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, provident inventore. Recusandae explicabo reiciendis cum vero doloremque at sed repudiandae soluta aliquam, saepe inventore impedit totam porro voluptatem. Molestiae, placeat?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente pariatur voluptates ullam officia dolores fugiat laudantium illum voluptas ratione. Et veniam deserunt neque! Praesentium nesciunt neque id quae consequuntur, perspiciatis, 
+            ipsum tempore, reiciendis nam cumque inventore ducimus quos magnam ut hic non. Iure sed ullam corporis aspernatur quaerat. Fugit vel ad provident quae possimus. Facere molestiae, iure, rem saepe reprehenderit libero tenetur aliquam architecto 
+            illo neque nesciunt non laboriosam maiores pariatur repellendus repellat enim eum sed? Et labore asperiores corporis necessitatibus iure voluptates animi minima consequatur repudiandae quos consectetur reprehenderit, ipsum, unde voluptatibus iusto qui. 
+            Autem ipsa omnis, distinctio reiciendis repellendus cum ea tempora beatae quaerat id earum veniam sequi error! Itaque est modi quia quibusdam distinctio beatae dignissimos alias dolorem voluptatum expedita obcaecati dolore mollitia et necessitatibus 
+            iste quis rerum corrupti, voluptates temporibus non aliquam, praesentium veritatis deserunt! Eaque debitis ex, voluptate itaque provident quam distinctio modi aliquam cupiditate saepe blanditiis quia voluptatem assumenda placeat delectus aliquid, 
+            soluta eveniet earum magni deserunt labore, nihil reprehenderit! At magni rem dicta accusamus iste, minus voluptas quisquam! Similique debitis facere neque quod, nobis minus dicta ducimus molestias iste quidem asperiores tempora sunt vel magni voluptate. 
+            Corporis, eum eius illo aliquid placeat aperiam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio quo numquam amet sit quos itaque voluptate ipsam fuga, odit laboriosam placeat dolores sapiente libero eos rem? Harum soluta quia debitis?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore, eos fugit modi provident delectus corrupti cumque at non dignissimos perspiciatis doloremque, aspernatur unde architecto est error sunt minus ut debitis. Ut omnis asperiores quod odit labore 
+            ipsam iusto reiciendis voluptatum, tenetur saepe perspiciatis voluptates. Quaerat sequi, vitae earum et sint suscipit architecto ipsa libero eum vero enim obcaecati reiciendis quam ducimus repudiandae quis necessitatibus ab illum ipsum ut vel? Ratione 
+            doloribus vitae laudantium quaerat unde, facere fuga ad explicabo illo porro! Nemo et quas tenetur vitae! Distinctio quisquam sunt ipsam, architecto commodi amet et perferendis aperiam dolorem reiciendis cupiditate, eos id neque. Eos sint voluptas reiciendis 
+            eius explicabo, quos asperiores nihil soluta nulla deserunt cum maxime ipsa rerum libero iure labore id fugit. Ratione et, nisi quibusdam, tempore accusantium rem perspiciatis non error laudantium ducimus provident assumenda. Quasi delectus labore fugit quas, 
+            dolor animi laudantium. Tenetur nam sed, voluptatibus culpa a consequuntur eos quia quisquam est doloremque molestiae itaque ipsum ducimus molestias rem accusamus, sequi impedit animi quas optio sunt. Hic, illum? Quaerat quo neque perspiciatis asperiores facilis ipsam soluta?
+        </p>
+
+
+    </div> 
+</body>
+</html>
